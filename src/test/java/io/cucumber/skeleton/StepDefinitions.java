@@ -24,6 +24,7 @@ public class StepDefinitions {
     }
     
     //calculator
+    //add
     @Given("I have a calculator")
     public void i_have_a_calculator() {
     	this.calculator = new Calculator();
@@ -32,6 +33,40 @@ public class StepDefinitions {
     @When("I add {int} and {int}")
     public void i_add_and(Integer num1, Integer num2) {
     	this.result = this.calculator.add(num1, num2);
+    }
+    
+    @Then("I get {int}")
+    public void i_get(Integer result) throws Exception {
+    	if (this.result != result) {
+    		throw new Exception();
+    	}
+    }
+    //substract
+    @Given("I have a calculator")
+    public void i_have_a_calculator() {
+    	this.calculator = new Calculator();
+    }
+
+    @When("I substract {int} and {int}")
+    public void i_substract_and(Integer num1, Integer num2) {
+    	this.result = this.calculator.sub(num1, num2);
+    }
+    
+    @Then("I get {int}")
+    public void i_get(Integer result) throws Exception {
+    	if (this.result != result) {
+    		throw new Exception();
+    	}
+    }
+    //multiply
+    @Given("I have a calculator")
+    public void i_have_a_calculator() {
+    	this.calculator = new Calculator();
+    }
+
+    @When("I multiply {int} and {int}")
+    public void i_multiply_and(Integer num1, Integer num2) {
+    	this.result = this.calculator.mult(num1, num2);
     }
     
     @Then("I get {int}")
